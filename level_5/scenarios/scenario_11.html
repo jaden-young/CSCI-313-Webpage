@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Level 5 - Boss Battle</h1>
+  <hr>
+  <h3><i>Player walks through fireball's impact area while it is on fire</i></h3>
+  <ol>
+    <li>The player's health is reduced by a small amount of damage over time from burning</li>
+    <li>Burning sound while damage over time is active</li>
+    <li>A small amount of embers and smoke appear in view as if they are on the player</li>
+  </ol>
+  <h3><i>Developer's Perspective</i></h3>
+  <img src="Images/scenario_11.png" alt="">
+  <p>
+    On a collision between the player avatar and the FireAOE objects damageRadius,
+    the FireAOE will pass data to the avatar's takeDamage method, including
+    total damage, duration, and rate at which to apply. On a collision the
+    FireAOE will also play a burning sound, and the system will call a method
+    "burn" to show burning embers and smoke on the camera.
+  </p>
+  <a href="index.html">Return to Scenario Index</a>
+</body>
+<footer>
+  <hr><i>Owner: Mitchell Kollodge</i></hr>
+  <br>
+  <i>Contributors: Jaden Young</i>
+</footer>
+</html>

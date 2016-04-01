@@ -1,0 +1,25 @@
+Level 1 Racer:
+scenarios are listed in detail.
+could have added explanation for object diagrams and calls being made.
+
+Level 2 Side Scroller:
+Player gets hit: explanation is same for both developer and player.
+some of the object diagrams are incomplete
+overall object diagram is good
+
+Level 3-Battle
+Player Starts Level 3: object diagram is not clear
+Player Gets Hit: no collision detection mentioned, no enemy object mentioned
+very short description for each scenario.
+
+Level 4- Puzzle
+good detail scenarios and clear explanation. 
+
+Level 5 - Boss Battle
+good list of scenarios
+No explanation on object diagram for some scenarios
+No diagrams for some scenarios
+
+
+Overall good effort. good job from game complexity perspective.
+But "Overall scenarios" pages are not working, start of the game, end of the game scenarios are missing

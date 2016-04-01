@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Level 4 Events</title>
+  <link rel="stylesheet" href="../../style.css">
+<body id="events">
+<div class="wrap">
+  <div class="sidebar">
+    <nav class="sidebar sidebar-nav">
+      <a href="../index.html">Level 4 Index</a>
+      <hr/>
+      <a href="scene.html" id="scenenav">Scene</a>
+      <a href="characters.html" id="charnav">Characters</a>
+      <a href="objects.html" id="objectsnav">Objects</a>
+      <a href="events.html" id="eventsnav">Events</a>
+      <a href="physics.html" id="physicsnav">Physics</a>
+      <a href="audio.html" id="audionav">Audio</a>
+      <a href="rules_and_objectives.html" id="rulesnav">Rules and Objectives</a>
+    </nav>
+  </div>
+  <div class="main">
+    <h1>Level 4 - Puzzle</h1>
+    <hr><i>Things that trigger actions</i></hr>
+    <p>
+      Once the level has started, a screen will pop up that will display the instructions for the level.
+    <p>      
+      Once the player moves within the maze and approaches and interacts with the puzzle door, the scene will 
+      transition from the maze to the 2D version of the first puzzle, the memory puzzle. And then the puzzle will start.
+    <p>
+      Within the memory puzzle, whenever the mouse clicks on a card, the card flips over. When another card is clicked to be 
+      flipped over, both of the cards get compared and if they are a match, then they stay faced up and a score is added. 
+      If not, then they both return to its original state, which was faced down. After each attempt, total number of lives are 
+      either added or deducted from the overall player's lives.
+    <p>
+      When the puzzle has been won, then the scene transitions from the 2D puzzle to the maze and the avatar will appear again
+      and it will be free to move forward in the maze and onto the next puzzle. And the total score from that puzzle will be 
+      added to the overall player score.
+    <p>
+      When the puzzle has been lost, then the scene transitions from the 2D puzzle to the maze and the avatar will appear again
+      however, the avatar will be placed at the beginning of the maze and will be forced to start all over again.
+    <p>
+      When the avatar interacts with the second puzzle door, the scene will transition from the maze to the 2D version of the 
+      Simon Says puzzle and then the puzzle will start.
+    <p>
+      When the Simon Says puzzle starts, then the board displays a sequence. When the mouse clicks on the correct sequence,
+      then the board produces a new sequence and it will do that until the number of sequences have been played out. If the 
+      sequence is not correct at any point, the board repeats the sequence so that it can be clicked on correctly. After each 
+      attempt, total number of lives are either added or deducted from the overall player's lives.
+    <p> 
+      When the puzzle has been won, then the scene transitions from the 2D puzzle to the maze and the avatar will appear again
+      and it will move in the maze towards the end of the maze and onto the next level. And the total score and lives from that 
+      puzzle will be added to the overall player score.
+    <p>
+      When the puzzle has been lost, then the scene transitions from the 2D puzzle to the maze and the avatar will appear again
+      however, the avatar will be placed at the point in the maze where it was at before the simon says puzzle started and will 
+      be forced to start all over again.
+    <p>
+      When the level has been completed, the scene will transition to the next level and the contents of level 4 will disappear,
+      but the player's score and lives that it gained through the level will be carried on to the next level.
+
+    </p>
+  </div>
+</div>
+<div class="footer">
+  <hr><i>Owner: Victoria Kyereme</i></hr>
+</div>
+</body>
+</html>

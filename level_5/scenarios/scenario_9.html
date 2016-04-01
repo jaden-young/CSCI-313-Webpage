@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Level 5 - Boss Battle</h1>
+  <hr>
+  <h3><i>Fireball hits the ground</i></h3>
+  <ol>
+    <li>Sends out a tremor in a small radius around the fireball</li>
+    <li>Small explosion on ground where fireball hits</li>
+    <li>Briefly sets the area hit by the fireball on fire</li>
+  </ol>
+  <h3><i>Developer's Perspective</i></h3>
+  <img src="Images/fireball_hits_ground.png" alt="">
+  <p>
+    When the Dragon calls its breathFire method, it creates a fireball object
+    with properties for size and trajectory. The Fireball object's update
+    method checks for a collision with the ground. On a collision, the Fireball
+    creates a FireballAOE object that
+    sets the collision are on fire for a set ammount of time.
+  </p>
+  <a href="index.html">Return to Scenario Index</a>
+</body>
+<footer>
+  <hr><i>Owner: Mitchell Kollodge</i></hr>
+  <br>
+  <i>Contributors: Jaden Young</i>
+</footer>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Level 4-Puzzle</h1>
+  <h3>Level Builder</h2>
+  <h4>Instance Variables</h4>
+  <p>memoryManager -> instance of memoryManager
+  <p>simonSaysManager -> instance of simonSaysManager
+  <h5>Methods</h4>
+  <p>sceneChange()
+    <p>The sceneChange method will hide the avatar and the maze and switch to the puzzle manager, either the memory manager or the simon says manager.
+  <p>delete()
+    <p>The delete method deletes the Level Builder when the player completes the level.
+  <p>update()
+    <p>The update method will call the avatar's update method which will detect collisions with the puzzle door.
+  <p>puzzleWon()
+    <p>The puzzleWon method will increase the overall score for the player after the puzzle manager gives the total score earned in that puzzle to the Level Builder. This method also indicates that the puzzle has been won therefore deleting the puzzle manager and re-drawing the avatar and the maze.
+  <p>puzzleLose()
+    <p>The puzzleLost method will tell the avatar that it lost a life and it will reset the avatar to the beginning of the maze or where it was in the maze. This method also indicates that the puzzle has been lost therefore deleting the puzzle manager and re-drawing the avatar and the maze.
+  <p>initialize()
+    <p>The initialize method will initialze the Level Builder and display the instructions for the player to know how to complete the level as well as initialize and draw both the avatar and the maze.
+    <p><a href="index.html">Return to Parts Index</a>
+</body>
+<hr><i>Owner: Victoria Kyereme</i></hr>
+
+</html>

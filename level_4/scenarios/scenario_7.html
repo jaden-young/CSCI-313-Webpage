@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Level 4-Puzzle</h1>
+  <h3> Player wins Memory</h2>
+  <h4><i>Player's Presepective </i></h4>
+  <p>The player will have just flipped the last two cards, winning the puzzle. The score for the puzzle will be displayed to them and then they would be returned to the maze.
+    <h4><i>Developer's Perspective</i></h4>
+        <img src=Images/WinsMemory.png width=50%>
+      <p>Memory Manager will be notified that this was the last card to be paired up. It will find the total score of the puzzle by multiplying the tries left by the score received during the puzzle. It will then give that info to the Level builder to increase the overall score for the player. Memory Manager will then pass control back to Level Builder which will delete the Memory Manager. It will make the maze and avatar visible again and allow the player to continiue on in the maze.
+  <p><a href="index.html">Return to Scenario Index</a>
+</body>
+<hr><i>Owner: Victoria Kyereme</i></hr>
+
+</html>
