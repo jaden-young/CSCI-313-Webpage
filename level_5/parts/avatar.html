@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Part Name</title>
+</head>
+<body>
+ <h1>Part Name</h1>
+ <hr>
+ <h3>Variables</h3>
+ <ul>
+   <li>- float health: Player health</li>
+   <li>+ Vector3 position: Player position</li>
+   <li>- bool isBlocking: Tells whether knight has shield raised</li>
+ </ul>
+ <h3>Methods</h3>
+ <ul>
+   <li>+ resetAvatar(): Resets the avatar to starting position and health (Called by level manager on player death when player has remaining lives)</li>
+   <li>+ update(): Updates health, player position</li>
+   <li>+ addToScore(int score): Adds or subtracts points to player's score</li>
+   <li>+ Initialize(): Sets inital health and position</li>
+   <li>+ addToHealth(int health): Adds or subtracts value from player's life points. Damage will be reduced if player is blocking</li>
+   <li>- slash(): Causes knight to swing sword</li>
+   <li>- block(): Causes knight to raise shield</li>
+   <li>- switchWeapon(): Causes knight to switch between sword/shield and bow/arrow</li>
+   <li>- shootBow(): Causes knight to shoot an arrow from the bow</li>
+ </ul>
+</body>
+<footer>
+  <hr>
+  <i>Owner: Jaden Young</i>
+  <br>
+  <i>Contributors: Mitchel Kollodge, Barret Davis</i>
+</footer>
+</html>
