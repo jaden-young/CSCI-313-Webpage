@@ -10,8 +10,8 @@
   <hr>
   <h3>Variables</h3>
   <ul>
-    <li>- float health: Player health</li>
-    <li>+ Vector3 position: Player position</li>
+    <li>+ int Health: Player health (C# property)</li>
+    <li>+ Vector3 position: Player position (for use with dragon AI)</li>
     <li>- bool isBlocking: Tells whether knight has shield raised</li>
   </ul>
   <h3>Methods</h3>
@@ -20,11 +20,11 @@
     <li>+ update(): Updates health, player position</li>
     <li>+ addToScore(int score): Adds or subtracts points to player's score</li>
     <li>+ Initialize(): Sets inital health and position</li>
-    <li>+ addToHealth(int health): Adds or subtracts value from player's life points. Damage will be reduced if player is blocking</li>
     <li>- slash(): Causes knight to swing sword</li>
     <li>- block(): Causes knight to raise shield</li>
     <li>- switchWeapon(): Causes knight to switch between sword/shield and bow/arrow</li>
     <li>- shootBow(): Causes knight to shoot an arrow from the bow</li>
+    <li>+ Health set method(int health): Adds or subtracts (if negative) given health value. Should check for 0 errors.</li>
  </ul>
  <a href="../index.html">Return to Parts Index</a>
 </body>

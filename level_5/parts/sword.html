@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Part Name</title>
+  <link rel="stylesheet" href="../../style.css">
+  <title>Sword</title>
 </head>
 <body>
- <h1>Part Name</h1>
+ <h1>Sword</h1>
  <hr>
  <h3>Variables</h3>
  <ul>
-   <li></li>
-   <li></li>
-   <li></li>
+   <li>+ bool isAttacking: Tells whether the player is currently attacking. Don't want 
+   collision damage to occur just from sword touching dragon.</li>
+   <li>+ int damage: Value of damage sword should inflict on an attack</li>
+   <li>+ bool Visible: Tells whether the sword is visible (C# Property)</li>
  </ul>
  <h3>Methods</h3>
  <ul>
-   <li></li>
-   <li></li>
-   <li></li>
-   <li></li>
-   <li></li>
+   <li>onCollision(object collider): Checks to see if player is currently attacking. If so, and the sword
+   collides with the dragon or destructible objects such as torches, inflict damage.</li>
+   <li>+ Visible set method(bool vis): Sets sword visibility (for when player switches weapons)</li>
  </ul>
+ <a href="../index.html">Return to Parts Index</a>
 </body>
 <footer>
   <hr>
