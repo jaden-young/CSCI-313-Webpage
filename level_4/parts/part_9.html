@@ -8,14 +8,39 @@
 </head>
 
 <body>
-  <h1>Level 4-Puzzle</h1>
-  <h2>Picture</h2>
+  <h1>Simon Parts- Button</h1>
+  <h2>Button</h2>
+    There are multiple of these in the game. Each is very similar with small differences which I will talk about at the end of the components.
+
+<h3>Material</h3>
+  Each button has two different materials, the off material and the on material. The off material is when the button has not been 'clicked'. The on material is when the button has been clicked. The differences between the different buttons is just the color of the material. This is an example of the button on and off material.
+<p>Off:
+<p><img src="offButton.png" width="50%"></img>
+<p>On:<p>
+<img src="onButton.png" width="50%"></img>
+<p>
+<p>
+<h3>ButtonShow script</h3>
   <h4>Variables </h4>
-  <p>
+  <p> Material Dark -> This material is the 'off' of the button
+<p> Material Light -> his material is the 'on' of the button
   <h4>Methods</h4>
-  <p>Initialize()  -> This is used to create the Object and initialize the variables
-  <p>Draw() -> This method draws the object on the screen
-  <p> delete() -> This method will delete the object when it is not longer needed
+  <p>void LightUp()  -> This method turns the light on
+  <p>void Darken() -> This method turns the light off
+<p>
+<p>
+<p>
+<p>
+<h3>Button Click Script</h3>
+<h4> Variables</h4>
+  <p> ButtonShow show -> instance of the ButtonShow script
+<p> float timeLift -> Meant to be timeLeft, used to tell the system when to turn the light off
+<p> bool turnedOn -> true when the button is turned on, false when it is off
+<p> SquenceMethods check -> instance of SquenceMethods ( in Board object) sends a number based on the certain button to the SquenceMethods to check if the correct one button for the sequence
+<h4>Methods</h4>
+<p> void OnMouseDown() -> This is when the user clicks on the button, it is send to the check variable to see if it is the correct one
+<p> void Update() -> used to get input of the user is clicking on the object, it also used to decrease timeLift if needed
+<p> void showLight() -> called by SquenceMethods to show the button to the user
     <p><a href="index.html">Return to Parts Index</a>
 </body>
 <hr><i>Owner: Kelsey Bedard</i></hr>

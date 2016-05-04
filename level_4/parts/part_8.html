@@ -4,22 +4,44 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../../style.css">
-  <title>Document</title>
+  <title>Simon Parts- Board</title>
 </head>
 
 <body>
-  <h1>Level 4-Puzzle</h1>
+  <h1>Simon Parts</h1>
   <h2>Board</h2>
+  <i>  The board is a cylinder in unity that is physically meant as eye appeal to keep the buttons grouped together. Most of the Simon functionality in the board scripts.</i>
+  <img src ="SimonBoard.png" />
+<h3>Materials</h3>
+  <p>The only material on the object is a solid black color.
+<p><h3> Other Components</h3>
+  This object has the general components on a normal object in unity. This includes Transform, Cpsule Collider, and Mesh Renderer.
+<h3>SeuenceMethods Script</h3>
+  <i>this is attached to the board as a script. It does most of the logic for the simon game</i>
   <h4>Variables </h4>
-  <p> Picture pictures[] -> This is a collection of picture Objects (4 total)
-  <p> ??? squence[] -> This is a random collection of pictures used to create the pattern the user have to repeat
+  <p> int[] sequence -> This variable is used to contain the sequence pattern
+  <p> int round -> this is used to keep track of how many rounds the user has complete and how are the user is in the sequence
+  <p> *Color*ButtonClick *color* -> there are four of these variables, each responding the the certain color of a button on the board that points to a script in that button
+  <p> private int counter -> This variables is used to show  the user the sequence
+  <p> private float timer -> use to keep track of how long the button is light up.
+  <p> int inSeq -> This variables is used to keep track of where the user is in getting the correct sequence
+  <p> private bool Showing -> If this is true, the system should be showing the user the sequence
+  <p> public int tries -> This will be set to 3 and is the number of times the user get to get the correct sequences and score as many points as they can.
+  <p> int score -> Used to keep track of the users score
+<p> Text varables -> Multiple text varables used to show the user the score, the number of tries, and win/lose.
+<p> bool firstTime -> this is true until the user hits the spacebar the first time, it shows the user the pattern to start the game.
+<p>bool EndGame -> this is false until the user win or loses the game. It than is activated so that the user can go to the main menu at the end.
   <h4>Methods</h4>
-  <p>Initialize()  -> This is used to create the Object and initialize the variables
-  <p>update() -> This method allows the Object to update and check for mouse clicks
-  <p>Check()  -> This allows the object to check if the clicked on picture is the correct one for the sequence. If the sequence is correct it will call SimonSaysManager's Correct method.
-  <p>Show()  -> This will show the squence to the user.
-  <p>UpdateSequence() -> this is increase the sequence collection by 1 more object
-  <p> delete() -> This method will delete the object when it is not longer needed
+  <p>void Start()  -> This is called when the object is created. It will generate a random number to corrispond a button on the board.
+  <p>void Update() -> This method checks of the user is hitting the spacebar to end the game or start the game. It also will decrease the timer when needed to show the next object in the squence.
+  <p>void CheckingSequence()  -> This allows the object to check if the clicked on button is the correct one for the sequence.
+  <p>void ShowSequence()  -> This will show the squence to the user.
+  <p>void UpdateSimonSequence() -> this is increase the sequence collection by 1 more object
+  <p> void show() -> This will get the show value to true. It is called when the player get the sequence incorrect and when the game starts.
+<p> void  setScoreText() -> This method set and update the score text
+<p> void setTriesText() -> This method sets and update the tries text
+<p> void endGameText() -> This method sets the end game info at the end of the game.
+<p> void EndGame() -> returns the user to the main menu
     <p><a href="index.html">Return to Parts Index</a>
 </body>
 <hr><i>Owner: Kelsey Bedard</i></hr>
