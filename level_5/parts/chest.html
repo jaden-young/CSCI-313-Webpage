@@ -8,14 +8,23 @@
 <body>
   <h1>Chest</h1>
   <hr>
+  <p>
+    The chest has a box collider marked as a trigger attached to it, so that
+    we can open the chest when the player comes into range.
+  </p>
   <h3>Variables</h3>
   <ul>
-    <li>None</li>
+    <li>- BottleOfRanchController Script - Reference to ranch controller 
+        so that we can play its animation, making it rise out of the chest
+        </li>
   </ul>
   <h3>Methods</h3>
   <ul>
-    <li>+ openChest(): Opens the chest, displaying the contents</li>
- </ul>
+    <li>- void OnTriggerEnter (Collier other): Uses Unity's tag system to
+      determine if it was the player that came in to range. If it was,
+      opens the chest and raises the ranch bottle up, playing
+      appropriate sound effects.</li>
+  </ul>
   <a href="index.html">Return to Parts Index</a> 
 </body>
 <footer>

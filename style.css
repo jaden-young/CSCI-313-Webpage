@@ -37,8 +37,9 @@ a {
   overflow: hidden;
   text-align: left;
   color: #000;
-  background-color: lightgray;
-  text-decoration: none;
+  /* background-color: lightgray; */
+  /* text-decoration: none; */
+  text-decoration: underline;
   padding: 4px 8px 4px 8px;
 }
 
@@ -47,7 +48,7 @@ a {
   display: flex;
   flex-direction: column;
   float: left;
-  text-align: center;;
+  text-align: center;
 }
 
 .indexNav hr {
@@ -73,10 +74,15 @@ a:hover {
   /* float: right */
 }
 
-li, p {
+p {
   padding: 4px;
   max-width: 1000px;
   text-indent: 1em;
+}
+
+li {
+  padding: 4px;
+  max-width: 1000px;
 }
 
 img {

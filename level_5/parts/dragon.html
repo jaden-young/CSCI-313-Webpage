@@ -8,6 +8,8 @@
 <body>
   <h1>Dragon</h1>
   <hr>
+  <h2>Original</h2>
+  <hr>
   <h3>Variables</h3>
   <ul>
     <li>+ int health: Dragon's health (C# Property)</li>
@@ -15,10 +17,107 @@
   <h3>Methods</h3>
   <ul>
     <li>-swipe(): Dragon claw attack</li>
-    <li>-breatheFire(): Causes the dragon to breathe fire in the direction it is currently facing</li>
-    <li>-shootFireBall(): Causes the dragon to shoot a fireball in the direction it is currently facing</li>
+    <li>-breatheFire(): Causes the dragon to breathe fire in the direction it       is currently facing</li>
+    <li>-shootFireBall(): Causes the dragon to shoot a fireball in the 
+      direction it is currently facing</li>
     <li>Dragon AI will be refined with testing and more research</li>
-    <li>Adjusting health will be handled in set method of health property.</li>
+    <li>Adjusting health will be handled in set method of health 
+      property.</li>
+  </ul>
+  <hr>
+  <h2>Actual</h2>
+  <p>
+    One of the first problems we ran into with the dragon is that Blender
+    uses the 3D coordinate system with the z-axis facing up, standard in
+    mathematical and engineering fields, while Unity has the y-axis pointing
+    up. This caused all sorts of havoc, making coordinates and rotations
+    a nightmare. The solution to the problem was surprisingly simple.
+  </p>
+  <p>
+    Because of this issue, the actual dragon is a child of an empty game
+    object, allowing us to attach components to the empty parent
+    that would adhere to Unity's coordinate system, dragging the dragon
+    along with it. 
+  </p>
+  <p>
+    Colliders and triggers are attached to the actual
+    dragon object. They are placed on different pieces of the dragons
+    armature, or bone structure, so that they will follow their 
+    respective body parts during animations. 
+  </p> 
+  <p>Components attached to the parent object are:</p>
+  <ul>
+    <li>Nav Mesh Agent - After configuring which objects and areas we want
+      to allow our AI to walk on, Unity can bake a Naviagtion Mesh into the
+      scene. This is a rather complicated data structure that is used to
+      simplify AI movement and pathfinding. Using the Agent attached to our 
+      dragon, we can dynamically calculate the optimal route to reach our
+      destination while avoiding obstacles and staying within the area we
+      want to.</li>
+    <li>Animator - This controls playing animations created for the dragon.
+      Animations we used were created in Blender. It contains a reference to
+      a Controller, which contains the list of animations and their
+      interactions. Action is only taken when called by the DragonAI
+      script.</li>
+    <li>Rigidbody - Dragon's rigidbody is marked as Kinematic, meaning that 
+      it is largely ignored by the physics engine, leaving movement entirely
+      up to scripting and animations.</li>
+    <li>Audio Source - Allows the dragon to play audio.</li>
+    <li>ITweenPath Script - Script from the 
+      <a href="http://itween.pixelplacement.com/index.php">ITween Library</a>      available on the
+      Unity Asset Store, that is responsible for the dragon's flight 
+      path. Allows us to visually configure a path in the Unity editor
+      instead of manually entering the coordinates of waypoints.
+      Also automatically crates curves inbetween waypoints.</li>
+    <li>DragonAI Script - This is responsible for controlling everything
+      that the dragon does. Important components:</li>
+    <ul>
+      <li>- GateController Script - Reference to the script controlling the
+        gate, so that we can tell it to open the gate when the dragon
+        dies.</li>
+      <li>- bool isAttacking - This is used so that we don't deal damage
+        every time the player enters the dragons attack hit box, only 
+        when we are actually performing an attack.</li>
+      <li>+ Slider dragonHealthSlider - Reference to the Slider UI element,
+        used to adjust the value visible to the player.</li>
+      <li>- void OnTriggerEnter (Collider) - This method is called when an
+        object enteres a collider marked as a trigger, i.e. our attack
+        hitboxes. In Unity, regular 
+        colliders are solid objects that can't be passed through. We wanted
+        to give our dragon's attacks a bit of a wider range, while not
+        making an invisible wall for the player to run into. Colliders
+        marked as triggers, however,  are ignored by the physics engine and 
+        are able to be moved through, giving us exactly what we need.
+        If the object our attack hit was the player, we use Unity's 
+        message system to tell the player to look for a script that
+        has a TakeDamage method and pass in our damage.</li>
+      <li>+ SetIsAttacking (int) - In Unity, it is possible to create Events
+        at certain frames on animations. These events can be used to call
+        methods on scripts that are attached to the same object as the 
+        animation's Animator. There are events at the beginning and end of
+        each attack animation, setting this value accordingly. Unfortunately,
+        the events do not support passing boolean values, so we use an int
+        here to set our boolean isAttacking.</li>
+      <li>- void RotateTowards (Vector3) - This method is used when the 
+        player is in attack range, but not in front of us (within 45 
+        degrees). When using the NavMeshAgent, the dragon actually moves
+        towards the player while rotating. We want the dragon here to stay
+        in place while rotating towards the player.</li>
+      <li>- void Fly () - Causes the dragon to take off and fly around
+        its predetermined flight path.</li>
+      <li>- void Roar () - Causes the dragon to roar, playing the 
+        appropriate animation and sound effect.</li>
+      <li>- void Chase () - Uses the NavMeshAgent to move towards
+        the player.</li>
+      <li>- void HeadSwipe () - Executes head swipe attack.</li>
+      <li>- void FlutterKick () - Executes flutter kick attack</li>
+      <li>- void TakeDamage (int) - Called by Unity's message system
+        when the player's sword attacks the dragon. Decreases dragon's
+        health by specified amount, also adjusting the Slider UI
+        element.</li>
+      <li>- void Death () - Stops the dragon from moving and plays 
+        death animation.</li>
+    </ul>
   </ul>
   <a href="index.html">Return to Parts Index</a> 
 </body>

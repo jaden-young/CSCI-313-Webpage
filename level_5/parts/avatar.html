@@ -8,6 +8,7 @@
 <body>
   <h1>Level 5 Avatar</h1>
   <hr>
+  <h2>Original</h2>
   <h3>Variables</h3>
   <ul>
     <li>+ int Health: Player health (C# property)</li>
@@ -25,8 +26,52 @@
     <li>- switchWeapon(): Causes knight to switch between sword/shield and bow/arrow</li>
     <li>- shootBow(): Causes knight to shoot an arrow from the bow</li>
     <li>+ Health set method(int health): Adds or subtracts (if negative) given health value. Should check for 0 errors.</li>
- </ul>
- <a href="index.html">Return to Parts Index</a>
+  </ul>
+  <hr>
+  <h2>Actual</h2>
+  <p>
+    The main player avatar is actually just an invisible capsule collider. Since 
+    we went with a first person view, rendering the knight model was unnecessary.
+    Controlling the player is handled by the stock FirstPersonController 
+    available in the Unity Standard Assets. The sword and the shield are child
+    objects of the player, causing them to move along with it.
+  </p>
+  <p>
+    Not having much experience with Unity, the actual implementation varied quite
+    a bit from the original design. Since we used independent models for the
+    sword and shield, their functionality is handled in their own scripts. Since
+    they were seperate models, we needed to animate and control them
+    independently.
+  </p>
+  <p>The components of the parent Player object:</p>
+  <ul>
+    <li>Character Controller - This is part of the package provided by 
+        the unity standard assets.</li>
+    <li>First Person Controller Script - Script provided by standard asset 
+        package that controls character movement.</li>
+    <li>Audio Source - Handles playing audio from the location of the player.
+        Sounds include player being hit by an attack, player dying, footsetps,
+        and the player's shield being hit.</li>
+    <li>Capsule Collider - Player's hitbox, also prevents player from running
+        through walls or through the dragon.</li>
+    <li>Player Health Script - Controls playing the above audio and taking
+        damage, including the player's health bar seen on screen. Important 
+        components:</li>
+    <ul>
+      <li>+ bool isBlocking - This is set in the script attached to the 
+          player's shield. If the player is blocking, damage taken is reduced
+          by half.</li>
+      <li>+ bool isDead - This is accessed by the LevelFiveManager script
+          to end the game when the player dies.</li>
+      <li>- void TakeDamage (int amount) - This is private because it is never
+          called directly. We take advantage of Unity's message and tag system
+          for dealing damage. When the player enters the box colliders marked as
+          triggers attached to the dragon while it is attacking, the dragon 
+          checks to see if the object that it hit is tagged as a player. If it is          , it sends a message to the player, telling it to look for a script 
+          attached to it that has a method called TakeDamage, and pass a certain           amount to it. This allows for an extensible combat system without each           individual object requiring a reference to everything it could possibly          deal damage to.</li>
+    </ul>
+  </ul>
+  <a href="index.html">Return to Parts Index</a>
 </body>
 <footer>
   <hr>
