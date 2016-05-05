@@ -6,7 +6,8 @@
   <title>Joe's Credit Page</title>
 </head>
 <body>
-Assets
+<font size ="8">Credits</font>
+<hr>
 <ul>
  <li>Animations</li>
  <li>Animator</li>
@@ -14,8 +15,42 @@ Assets
  <li>Killing Enemy</li>
  <li>Game Over UI</li>
  <li>Winner UI</li>
- <li>
+ <li>Camera Controller</li>
+ <li>Player Movement(Removed)</li>
 </ul>
+
+<p>Animations - Using a sprite sheet, I generated a loop in order to cycle through the sprites for both walking and idle animations. Also 
+added a flipping method, which would cause the sprite to flip based on the direction it was walking. This meant changing the center point for every 
+sprite by hand. The animation is a component of the <a href="../level_2/parts/part_1.html">player asset</a>.</p>
+
+<p>Animator - Animator will switch back and forth between the walking animation and the idle animation of a sprite. It is set to switch 
+when a speed variable is above 0. This is also part of the <a href="../level_2/parts/part_1.html">player asset</a>.</p>
+
+<p>Enemy Collisions - I used a box collider to check for collisions between the player and enemy ghost.This will also
+include a collision between the player and the lava. Both the lava and the enemy ghost have their own box collider to check for collisions.
+To be able to do this, I had to use both the <a href="../level_2/parts/part_1.html">player asset</a> 
+and <a href="../level_2/parts/part_5.html">enemy asset</a>.</p>
+
+<p>Killing enemy - The player has a second box collider that is positioned on the bottom of the sprite. This way when the player falls on
+top of the enemy, it will register a collision allowing me to disable the enemy ghost. This used both the <a href="../level_2/parts/part_1.html">player asset</a> 
+and <a href="../level_2/parts/part_5.html">enemy asset</a>.</p>
+
+<p>Game Over UI - When a player either runs into an enemy or falls into the water, the enemy collision box will dectect the collision and 
+will activate the Game Over UI, which displays the text Game Over as well as a button which will return the you to the main page.
+This used both the <a href="../level_2/parts/part_1.html">player asset</a> 
+and <a href="../level_2/parts/part_5.html">enemy asset</a>. </p>
+
+<p>Winner UI - When the player collides with the chest at the end of the level, the Winner UI will activate displaying the text Winner and
+ a button which will return you to the main page. This used the <a href="../level_2/parts/part_1.html">player asset</a>. </p>
+
+<p>Camera Controller - Short feature which sets the camera's position to the same as the player's position.
+ This used the <a href="../level_2/parts/part_1.html">player asset</a>. </p>
+
+<p>Player Movement(Removed) - I had originally worked on the player movement, however it turned out to be glitchy. The avatar would end up
+getting randomly stuck on the floor, and also got stuck on the side of walls. We decided to remove this feature and go in a different direction
+for player movement which Kevin completed. This used the <a href="../level_2/parts/part_1.html">player asset</a>. </p>
+
+
 
 <hr><i>Owner: Joe Willert</i>
 </body>
