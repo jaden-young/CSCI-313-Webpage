@@ -14,12 +14,21 @@
   <ol>
     <li>Dragon's death animation starts Dragon roars then falls over dead</li>
     <li>Dragon's body remains on the ground Falls in a designated position so as to not fall on top of the player</li>
-    <li>After the dragon's death animation, camera switches to the gate behind where the dragon was and watches the animation of the gate opening </li>
+    <li><strike>After the dragon's death animation, camera switches to the 
+      gate behind where the dragon was and watches the animation of the gate
+      opening</strike></li>
+    <li>Gate opens and sound effect plays, camera stays on first person
+      player.</li>
   </ol>
 <hr>
   <h3><i>Developer's Perspective</i></h3>
-  <img src="Images/scenario_13.png" alt="">
-
+  <p>
+    The <a href="../parts/dragon.html">Dragon's</a> death method causes
+    the dragon to cease chasing the player and play a death animation and 
+    sound effect. The DragonAI script then calls the
+    <a href="../parts/gate.html">Gate's</a> open method to open the gate,
+    playing appropriate animation and sound effect.
+  </p>
   <a href="index.html">Return to Scenario Index</a>
 </body>
 <footer>

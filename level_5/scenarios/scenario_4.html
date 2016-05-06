@@ -11,6 +11,7 @@
   <h1>Level 5 - Boss Battle</h1>
   <hr>
   <h3><i>Player attacks dragon with sword</i></h3>
+  <h2>Original</h2>
   <ol>
     <li>Dragon roars</li>
     <li>Dragons health is reduced from all hits</li>
@@ -19,7 +20,25 @@
   </ol>
   <h3><i>Developer's Perspective</i></h3>
 	<img src="Images/L6-Scenario 4.png" width=50%>
-
+  <h2>Actual</h2>
+  <ol>
+    <li>Hit sound effect plays</li>
+    <li>Dragons health is reduced</li>
+  </ol>
+  <h3><i>Developer's Perspective</i></h3>
+  <p>
+    We use Unity's <a href="http://docs.unity3d.com/Manual/Tags.html">tag</a>
+    and <a href="http://docs.unity3d.com/ScriptReference/GameObject.SendMessage.html">message</a> 
+    systems to control dealing damage. The script
+    attached to the player's <a href="../parts/sword.html">sword</a> checks 
+    when it enters a collision if the object it collided with is tagged as 
+    a Dragon. Then, if the player is  currently attacking (determined by 
+    <a href="http://docs.unity3d.com/Manual/animeditor-AnimationEvents.html">
+    Animation Events</a> in sword), we use Unity's 
+    <a href="http://docs.unity3d.com/ScriptReference/GameObject.SendMessage.html">SendMessage</a> to call the
+    TakeDamage method on the <a href="../parts/dragon.html">dragon</a>, 
+    passing in the damage we want to deal.
+  </p>
   <a href="index.html">Return to Scenario Index</a>
 </body>
 <hr><i>Owner: Mitchell Kollodge    Contributors: Barrett Davis</i></hr>

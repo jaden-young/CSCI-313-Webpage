@@ -11,6 +11,7 @@
   <h1>Level 5 - Boss Battle</h1>
   <hr>
   <h3><i>Player's health gets reduced to 0 or less</i></h3>
+  <h2>Original</h2>
   <ol>
     <li>Battle music ends</li>
     <li>Death animation and camera pans out to see the player's body laying on the ground and the dragon shaking it's head, spitting fire and ending with the dragon roaring</li>
@@ -19,10 +20,24 @@
     <li>If player has no lives remaining they are shown a game over screen and returned to the main menu</li>
   </ol>
   <h3><i>Developer's Perspective</i></h3>
-
-
 	<img src="Images/L6-Scenario 7.png" width=50%>
-
+  <h2>Actual</h2>
+  <p>
+    Since we went with an arcade style game instead of our game being a 
+    linear progression, we opted against having lives. Instead, the player
+    is simply returned to the main menu upon death. 
+  </p>
+  <ol>
+    <li>Player death sound effect plays</li>
+    <li>Screen goes red</li>
+    <li>Player is returned to main menu</li>
+  </ol>
+  <h3><i>Developer's Perspective</i></h3>
+  <p>
+    When the player reaches 0 health, the 
+    <a href="../parts/level_five_manager.html">LevelFiveManager</a>
+    script will end the game.
+  </p>
 
   <a href="index.html">Return to Scenario Index</a>
 </body>

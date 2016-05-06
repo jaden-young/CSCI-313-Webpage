@@ -8,6 +8,7 @@
 <body>
  <h1>Sword</h1>
  <hr>
+ <h2>Origional</h2>
  <h3>Variables</h3>
  <ul>
    <li>+ bool isAttacking: Tells whether the player is currently attacking. Don't want 
@@ -20,6 +21,40 @@
    <li>onCollision(object collider): Checks to see if player is currently attacking. If so, and the sword
    collides with the dragon or destructible objects such as torches, inflict damage.</li>
    <li>+ Visible set method(bool vis): Sets sword visibility (for when player switches weapons)</li>
+ </ul>
+ <h2>Actual</h2>
+ <p>
+   We used the sword model found in our Knight from the asset store, with
+   own custom animations. The sword is set as a child object of the Player,
+   keeping its position locked as if the player were holding the sword.
+ </p>
+ <p>Unity components attached to the sword:</p>
+ <ul>
+   <li>Rigidbody - Used so that our collisions register with the physics
+     engine.</li>
+   <li>Box Collider - The swords hit box. This is actually attached to a
+     bone in the armature of the sword model, instead of the parent object,
+     so that the collider follows the sword during the swing animation.</li>
+   <li>Audio Source - Allows the sword to play audio.</li>
+   <li>Animator - Holds information regarding animating the sword.
+     Animations only play when called by the Player Attack script.</li>
+   <li>PlayerAttack Script - Controls swinging the sword and dealing 
+     damage. Important components:</li>
+   <ul>
+     <li>- bool isAttacking - Tells whether player is currently swinging
+       the sword.</li>
+     <li>- void <a href="../scenarios/scenario_4.html">OnCollisionEnter</a>
+       (Collision) - Called whenever the swords box collider collides with 
+       an object.</li>
+     <li>- void Attack () - Causes player to swing sword, playing appropriate
+       sound effects.</li>
+     <li>- void SetIsAttacking () - Sets a private boolean value to determine
+       if the player is currently attacking (so we don't deal damage just
+       from the sword touching the dragon, only when we're swinging the
+       sword). Set by 
+       <a href="http://docs.unity3d.com/Manual/animeditor-AnimationEvents.html">Animation Events</a>
+       in the sword model's animations.</li>
+   </ul>
  </ul>
  <a href="index.html">Return to Parts Index</a>
 </body>

@@ -13,10 +13,22 @@
   <h3><i>Player walks through the gate and opens the chest</i></h3>
   <ol>
     <li>Animation of the chest opening and a bottle of ranch slowly rises from within </li>
+    <li>Chest opening and ranch rising sound effects play</li>
     <li>Victory music starts</li>
-    <li>Final score screen is displayed</li>
+    <li><strike>Final score screen is displayed</strike></li>
   </ol>
   <h3><i>Developer's Perspective</i></h3>
+  <p>
+    This scenario is triggered by the box collider marked as a trigger
+    attached to the <a href="../parts/chest.html">Chest</a> in its
+    OnTriggerEnter method. The ChestController script then calls its
+    open method, as well as the 
+    <a href="../parts/ranch_bottle.html">BottleOfRanchController</a>'s 
+    RaiseBottle method. When the bottle of ranch is done rising out of
+    the chest, the 
+    <a href="../parts/level_five_manager.html">LevelFiveManager</a>
+    script will return the player to the main menu.
+  </p>
   <a href="index.html">Return to Scenario Index</a>
 </body>
 <footer>

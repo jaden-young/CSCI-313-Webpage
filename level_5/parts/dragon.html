@@ -27,6 +27,10 @@
   <hr>
   <h2>Actual</h2>
   <p>
+    We didn't implement any sort of fire breathing/shooting with dragon,
+    also opted for headswipe/swiping attacks in lieu of a tailswipe.
+  </p>
+  <p>
     One of the first problems we ran into with the dragon is that Blender
     uses the 3D coordinate system with the z-axis facing up, standard in
     mathematical and engineering fields, while Unity has the y-axis pointing
@@ -95,10 +99,12 @@
         at certain frames on animations. These events can be used to call
         methods on scripts that are attached to the same object as the 
         animation's Animator. There are events at the beginning and end of
-        each attack animation, setting this value accordingly. Unfortunately,
+        each attack animation of our dragon, setting this value accordingly.
+        Unfortunately,
         the events do not support passing boolean values, so we use an int
         here to set our boolean isAttacking.</li>
-      <li>- void RotateTowards (Vector3) - This method is used when the 
+      <li>- void <a href="../scenarios/scenario_13.html">RotateTowards</a>
+        (Vector3) - This method is used when the 
         player is in attack range, but not in front of us (within 45 
         degrees). When using the NavMeshAgent, the dragon actually moves
         towards the player while rotating. We want the dragon here to stay
@@ -109,13 +115,18 @@
         appropriate animation and sound effect.</li>
       <li>- void Chase () - Uses the NavMeshAgent to move towards
         the player.</li>
-      <li>- void HeadSwipe () - Executes head swipe attack.</li>
-      <li>- void FlutterKick () - Executes flutter kick attack</li>
+      <li>- void <a href="../scenarios/scenario_13.html">HeadSwipe</a>
+        () - Dragon stays in place, swinging it's neck and head from
+        right to left near the ground.</li>
+      <li>- void <a href="../scenarios/scenario_13.html">FlutterKick </a>
+        () - Dragon rears up on its hind legs, swiping its front 2 legs
+        up and down.</li>
       <li>- void TakeDamage (int) - Called by Unity's message system
-        when the player's sword attacks the dragon. Decreases dragon's
-        health by specified amount, also adjusting the Slider UI
-        element.</li>
-      <li>- void Death () - Stops the dragon from moving and plays 
+        from the player's <a href="../scenarios/scenario_4.html">sword</a> 
+        attacks. Decreases dragon's health by specified amount, also 
+        adjusting the Slider UI element.</li>
+      <li>- void <a href="../scenarios/scenario_13.html">Death</a> () 
+          - Stops the dragon from moving and plays 
         death animation.</li>
     </ul>
   </ul>

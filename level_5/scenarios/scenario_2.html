@@ -11,16 +11,35 @@
   <h1>Level 5 - Boss Battle</h1>
   <hr>
   <h3><i>Player moves around in the level</i></h3>
+  <h2>Original</h2>
   <ol>
     <li>The dragon's head tracks the player</li>
     <li>The dragon slowly walks toward the player's position, but stays within a designated radius of its original position</li>
     <li>A fireball gets shot from the dragon's mouth periodically at the player</li>
   </ol>
   <h3><i>Developer's Perspective</i></h3>
-
-	
 	<img src="Images/L6-Scenario 2.png" width=50%>
-	
+	<h2>Actual</h2>
+  <p>
+    We don't have the dragon's head tracking the player, instead the
+    dragon's entire body follows the player as it moves. We also removed
+    the restriction on having the dragon stay close to the gate, it will
+    instead follow the player all over the arena. There is no escape from
+    Terry the Terrible.
+  </p>
+  <h3><i>Developer's Perspective</i></h3>
+  <p>
+    Player is controlled by the 
+    <a href="../parts/Avatar">FirstPersonController</a> script attached to
+    the player. Uses standard controls, wasd, shift for sprint, space
+    for jump.
+  </p>
+  <p>
+    Dragon moving towards the player is handled by the Chase method in
+    the <a href="../parts/Dragon">DragonAI</a> script, using its
+    NavMeshAgent. This is used by referencing the position of the player
+    and setting that position as the destination of the agent.
+  </p>
 
   <a href="index.html">Return to Scenario Index</a>
 </body>

@@ -13,13 +13,29 @@
   <h3><i>Player gets in attack range</i></h3>
   <ol>
     <li>Player can use sword to deal damage to the dragon</li>
-    <li>Dragon can blow person back using its wings</li>
-    <li>Dragon can swing its tail at the player</li>
+    <li><strike>Dragon can blow person back using its wings</strike></li>
+    <li><strike>Dragon can swing its tail at the player</strike></li>
+    <li>Dragon will do the following</li>
+    <ol>
+      <li>If player is not in front of the dragon, the dragon will rotate 
+        towards the player.</li>
+      <li>If player is within claw range, the dragon will perform a 
+        flutter kick attack.</li>
+      <li>If player is in headswipe range, the dragon will perform a
+        headswipe attack.</li>
+    </ol>
   </ol>
-  <h3><i>Developer's Perspective</i></h3>
+  <h3><i>Original Developer's Perspective</i></h3>
 	<img src="Images/L6-Scenario 3.png" width=50%>
+  <h3><i>Actual Developer's Perspective</i></h3>
+  <p>
+    During the dragon's Update method, the dragon will get a reference
+    to the player's current position. It will then calculate the angle
+    between the player and the dragon. It will use this information to
+    choose an action to perform from number 4 above.
+  </p>
   <a href="index.html">Return to Scenario Index</a>
 </body>
-<hr><i>Owner: Mitchell Kollodge    Contributors: Barrett Davis</i></hr>
+<hr><i>Owner: Mitchell Kollodge    Contributors: Barrett Davis, Jaden Young</i></hr>
 
 </html>
