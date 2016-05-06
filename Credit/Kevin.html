@@ -6,7 +6,38 @@
   <title>Kevin's Credit Page</title>
 </head>
 <body>
+<font size ="8">Credits</font>
+<hr>
+<ul>
+ <li>Lighting</li>
+ <li>Level Creation</li>
+ <li>Reflective Water</li>
+ <li>Player movement</li>
+ <li>Spike Traps</li>
+ <li>Enemy Movement</li>
+</ul>
 
-<hr><i>Owner: Kevin Fagon</i>
+<p>Lighting - Unity has many different tools for lighting, I decided to use spot lighting because it looked more natural when attaching it to a torch. I gave the lighting a sligh red/orange/yellow glow 
+so it resembled a torch properly. <a href="../level_2/parts/part_10.html">player asset</a></p>
+
+<p>Level Creation - I was in charge of creating the level. Initially Joe created a small sketch for the map, but it was not long enough so I used what Joe had in mind and added onto it. The level 
+consists of two floors. The second floor is much harder than the first and while on the second floor, you are vulnerable to fall back onto the first floor. I designed the level to be tough 
+because it ended up not being that long. <a href="../level_2/parts/part_10.html">player asset</a></p>
+
+<p>Reflective Water - Creating water that reflected the world was by far my biggest challange for the game. I ended up using different shaders and multiple textures to get a small wave effect. If 
+the player falls in the water, the player will die and have to restart the level from the beginning. <a href="../level_2/parts/part_9.html">player asset</a></p>
+
+<p>Player Movement - For the player movement I did not use a Rigid body or a box collider. Instead I used a method called Raycasting which basically shoots invisible rays in the direction the player is moving.
+If the rays collide with an object of the mask that the rays are looking for, it will hault that player from going in that direction. Raycasting gave the player smooth movement unlike the Rigid body method.
+<a href="../level_2/parts/part_1.html">player asset</a></p>
+
+<p>Spike Traps - The spike traps were pretty simple to make. There were to objects involved in the spike trap, the base part of the trap which could not harm the player, and the spikes that came out of the trap which could 
+harm the player. The spikes had a seperate collider and when the timer when off for the spikes to activate, it re-enabled the spikes and the box collider would take effect if the player collided with it
+<a href="../level_2/parts/part_11.html">player asset</a>.</p>
+
+<p>Enemy Movement - Enemy movement was the easiest part of this project. All I did was have it move on a path, and which it reached the end of the path, it would simple turn around and move the other direction. To make
+the enemy rotate, I just flipped it by its X axis. <a href="../level_2/parts/part_5.html">player asset</a></p>
+
+<hr><i>Owner: Kevin Fagan</i>
 </body>
 </html>
