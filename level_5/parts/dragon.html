@@ -17,7 +17,8 @@
   <h3>Methods</h3>
   <ul>
     <li>-swipe(): Dragon claw attack</li>
-    <li>-breatheFire(): Causes the dragon to breathe fire in the direction it       is currently facing</li>
+    <li>-breatheFire(): Causes the dragon to breathe fire in the direction it
+      is currently facing</li>
     <li>-shootFireBall(): Causes the dragon to shoot a fireball in the 
       direction it is currently facing</li>
     <li>Dragon AI will be refined with testing and more research</li>
@@ -51,8 +52,12 @@
   </p> 
   <p>Components attached to the parent object are:</p>
   <ul>
-    <li>Nav Mesh Agent - After configuring which objects and areas we want
-      to allow our AI to walk on, Unity can bake a Naviagtion Mesh into the
+    <a class="hidden-link" name="nav_mesh_agent"></a>
+    <li><a href="http://docs.unity3d.com/Manual/class-NavMeshAgent.html">
+      Nav Mesh Agent</a> - After configuring which objects and areas we want
+      to allow our AI to walk on, Unity can bake a 
+      <a href="http://docs.unity3d.com/Manual/nav-BuildingNavMesh.html">
+      Naviagtion Mesh</a> into the
       scene. This is a rather complicated data structure that is used to
       simplify AI movement and pathfinding. Using the Agent attached to our 
       dragon, we can dynamically calculate the optimal route to reach our
@@ -68,11 +73,13 @@
       up to scripting and animations.</li>
     <li>Audio Source - Allows the dragon to play audio.</li>
     <li>ITweenPath Script - Script from the 
-      <a href="http://itween.pixelplacement.com/index.php">ITween Library</a>      available on the
+      <a href="http://itween.pixelplacement.com/index.php">ITween Library</a>
+      available on the
       Unity Asset Store, that is responsible for the dragon's flight 
       path. Allows us to visually configure a path in the Unity editor
       instead of manually entering the coordinates of waypoints.
       Also automatically crates curves inbetween waypoints.</li>
+    <a class="hidden-link" name="dragonAI"></a>
     <li>DragonAI Script - This is responsible for controlling everything
       that the dragon does. Important components:</li>
     <ul>
@@ -84,6 +91,7 @@
         when we are actually performing an attack.</li>
       <li>+ Slider dragonHealthSlider - Reference to the Slider UI element,
         used to adjust the value visible to the player.</li>
+      <a class="hidden-link" name="on_trigger_enter"></a>
       <li>- void OnTriggerEnter (Collider) - This method is called when an
         object enteres a collider marked as a trigger, i.e. our attack
         hitboxes. In Unity, regular 
@@ -103,28 +111,35 @@
         Unfortunately,
         the events do not support passing boolean values, so we use an int
         here to set our boolean isAttacking.</li>
+      <a class="hidden-link" name="rotate_towards"></a>
       <li>- void <a href="../scenarios/scenario_13.html">RotateTowards</a>
         (Vector3) - This method is used when the 
         player is in attack range, but not in front of us (within 45 
         degrees). When using the NavMeshAgent, the dragon actually moves
         towards the player while rotating. We want the dragon here to stay
         in place while rotating towards the player.</li>
+      <a class="hidden-link" name="fly"></a>
       <li>- void Fly () - Causes the dragon to take off and fly around
         its predetermined flight path.</li>
       <li>- void Roar () - Causes the dragon to roar, playing the 
         appropriate animation and sound effect.</li>
+      <a class="hidden-link" name="chase"></a>
       <li>- void Chase () - Uses the NavMeshAgent to move towards
         the player.</li>
+      <a class="hidden-link" name="head_swipe"></a>
       <li>- void <a href="../scenarios/scenario_13.html">HeadSwipe</a>
         () - Dragon stays in place, swinging it's neck and head from
         right to left near the ground.</li>
+      <a class="hidden-link" name="flutter_kick"></a>
       <li>- void <a href="../scenarios/scenario_13.html">FlutterKick </a>
         () - Dragon rears up on its hind legs, swiping its front 2 legs
         up and down.</li>
+      <a class="hidden-link" name="take_damage"></a>
       <li>- void TakeDamage (int) - Called by Unity's message system
         from the player's <a href="../scenarios/scenario_4.html">sword</a> 
         attacks. Decreases dragon's health by specified amount, also 
         adjusting the Slider UI element.</li>
+      <a class="hidden-link" name="death"></a>
       <li>- void <a href="../scenarios/scenario_13.html">Death</a> () 
           - Stops the dragon from moving and plays 
         death animation.</li>

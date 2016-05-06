@@ -30,13 +30,14 @@
     We use Unity's <a href="http://docs.unity3d.com/Manual/Tags.html">tag</a>
     and <a href="http://docs.unity3d.com/ScriptReference/GameObject.SendMessage.html">message</a> 
     systems to control dealing damage. The script
-    attached to the player's <a href="../parts/sword.html">sword</a> checks 
+    attached to the player's <a href="../parts/sword.html#player_attack">sword</a> checks 
     when it enters a collision if the object it collided with is tagged as 
     a Dragon. Then, if the player is  currently attacking (determined by 
     <a href="http://docs.unity3d.com/Manual/animeditor-AnimationEvents.html">
     Animation Events</a> in sword), we use Unity's 
-    <a href="http://docs.unity3d.com/ScriptReference/GameObject.SendMessage.html">SendMessage</a> to call the
-    TakeDamage method on the <a href="../parts/dragon.html">dragon</a>, 
+    <a href="http://docs.unity3d.com/ScriptReference/GameObject.SendMessage.html">SendMessage</a>
+    to call the
+    <a href="../parts/dragon.html#take_damage">TakeDamage</a> method on the dragon
     passing in the damage we want to deal.
   </p>
   <a href="index.html">Return to Scenario Index</a>

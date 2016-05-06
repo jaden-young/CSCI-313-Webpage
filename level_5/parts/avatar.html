@@ -6,7 +6,7 @@
   <title>Level 5 Avatar</title>
 </head>
 <body>
-  <h1>Level 5 Avatar</h1>
+  <h1>Level 5 Avatar (Player)</h1>
   <hr>
   <h2>Original</h2>
   <h3>Variables</h3>
@@ -45,7 +45,8 @@
   </p>
   <p>The components of the parent Player object:</p>
   <ul>
-    <li>Character Controller - This is part of the package provided by 
+    <li><a href="http://docs.unity3d.com/Manual/class-CharacterController.html">
+      Character Controller</a> - This is part of the package provided by 
         the unity standard assets.</li>
     <li>First Person Controller Script - Script provided by standard asset 
         package that controls character movement.</li>
@@ -54,21 +55,30 @@
         and the player's shield being hit.</li>
     <li>Capsule Collider - Player's hitbox, also prevents player from running
         through walls or through the dragon.</li>
+    <a class="hidden-link" name="player_health"></a>
     <li>Player Health Script - Controls playing the above audio and taking
         damage, including the player's health bar seen on screen. Important 
         components:</li>
     <ul>
+      <a class="hidden-link" name="isBocking"></a>
       <li>+ bool isBlocking - This is set in the script attached to the 
-          player's shield. If the player is blocking, damage taken is reduced
-          by half.</li>
-      <li>+ bool isDead - This is accessed by the LevelFiveManager script
-          to end the game when the player dies.</li>
-      <li>- void TakeDamage (int amount) - This is private because it is never
+          player's <a href="shield.html">shield</a>. If the player is blocking, 
+          damage taken is reduced by half.</li>
+      <li>+ bool isDead - This is accessed by the 
+        <a href="level_five_manager.html">LevelFiveManager</a>
+        script to end the game when the player dies.</li>
+      <a class="hidden-link" name="take_damage"></a>
+      <li>- void <a href="../scenarios/scenario_17.html">TakeDamage</a> (int) - 
+          This is private because it is never
           called directly. We take advantage of Unity's message and tag system
           for dealing damage. When the player enters the box colliders marked as
           triggers attached to the dragon while it is attacking, the dragon 
-          checks to see if the object that it hit is tagged as a player. If it is          , it sends a message to the player, telling it to look for a script 
-          attached to it that has a method called TakeDamage, and pass a certain           amount to it. This allows for an extensible combat system without each           individual object requiring a reference to everything it could possibly          deal damage to.</li>
+          checks to see if the object that it hit is tagged as a player. If it is,
+          it sends a message to the player, telling it to look for a script 
+          attached to it that has a method called TakeDamage, and pass a certain
+          amount to it. This allows for an extensible combat system without each
+          individual object requiring a reference to everything it could possibly
+          deal damage to.</li>
     </ul>
   </ul>
   <a href="index.html">Return to Parts Index</a>

@@ -42,6 +42,13 @@ a {
   padding: 4px 8px 4px 8px;
 }
 
+/* hidden links for jumping to specific part of page */
+.hidden-link  {
+  padding: 0px;
+  margin: 0px;
+  visibility: hidden;
+}
+
 .indexNav {
   margin: 20px;
   display: flex;

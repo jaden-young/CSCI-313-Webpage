@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../style.css">
+  <title>Player Hit by Dragon</title>
+</head>
+
+<body>
+  <h1>Level 5 - Boss Battle</h1>
+  <hr>
+  <h3><i>Player Hit by Dragon Attack</i></h3>
+  <ol>
+    <li>Player is hit by dragon's attack</li>
+    <li>Player's health bar decreases</li>
+  </ol>
+  <h3><i>Developer's Perspective</i></h3>
+  <p>
+    Again, we make use of Unity's tag and message system. When the player
+    is hit by an attack from the Dragon, its
+    <a href="../parts/dragon.html#on_trigger_enter">OnTriggerEnter</a> method 
+    is called. The dragon then uses the 
+    <a href="http://docs.unity3d.com/ScriptReference/GameObject.SendMessage.html">SendMessage</a>
+    method to tell our player's 
+    <a href="../parts/avatar#player_health.html">PlayerHealth</a>
+    script to take the specified amount of damage.
+    If the player's <a href="../parts/shield.html">shield</a> has told the
+    PlayerHealth script that we are currently blocking, that damage
+    is to be reduced by half. The PlayerHealth script then updates the 
+    <a href="http://docs.unity3d.com/Manual/script-Slider.html">slider</a>
+    UI element representing the player's health.
+  </p>
+  <a href="index.html">Return to Scenario Index</a>
+</body>
+<footer>
+  <hr><i>Owner: Mitchell Kollodge</i></hr>
+  <br>
+  <i>Contributors: Jaden Young</i>
+</footer>
+</html>

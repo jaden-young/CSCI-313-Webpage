@@ -10,8 +10,25 @@
   <hr>
   <p>
     The shield is attached as a child object of the Player game object
-    in the Unity editor. Since we handled 
+    in the Unity editor. Since we handled the sword and shield as 
+    independently, each needed their own scripts and animations. We used
+    the shield model from the knight asset from the asset store, while
+    making our own custom animations and animation events.
   </p>
+  <p>Components of Shield:</p>
+  <ul>
+    <li>Animator - Controls the shield animation. Only used when called by
+      PlayerDefend script.</li>
+    <li>PlayerDefend Script - Simple script that controls raising the shield.
+      </li>
+    <ul>
+      <li>- <a href="../parts/avatar.html">PlayerHealth</a> - Reference to
+        player health script so we can set its isBlocking variable.</li>
+      <li>- void <a href="../scenarios/scenario_18.html">SetIsBlocking</a>
+        (int) - Called by Animation Events at the
+        beginning and end of shield raising animation.</li>
+    </ul>
+  </ul>
   <a href="index.html">Return to Parts Index</a> 
 </body>
 <footer>
