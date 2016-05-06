@@ -37,9 +37,8 @@ a {
   overflow: hidden;
   text-align: left;
   color: #000;
-  /* background-color: lightgray; */
-  /* text-decoration: none; */
-  text-decoration: underline;
+  background-color: lightgray;
+  text-decoration: none;
   padding: 4px 8px 4px 8px;
 }
 
